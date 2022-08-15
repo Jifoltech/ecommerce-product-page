@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap"
+    />
+    <link rel="stylesheet" href="bootstrap-icons/bootstrap-icons.css" />
+    <link rel="stylesheet" href="ecommerce.css" />
+    <title>Frontend Mentor | E-commerce product page</title>
+  </head>
+  <body class="container-fluid">
+    <div class="container">
+      <nav class="navbar navbar-expand-lg boder border-bottom">
+        <a class="navbar-brand" href="#">
+          <h3>sneakers</h3>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >Collections</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Men</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Women</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+        <ul class="navbar-nav d-flex">
+          <li class="nav-item icon">
+            <a href="#"><i class="bi bi-cart2 text-dark update" id="update"></i></a>
+            <p class="Amount" id="amount">0</p>
+          </li>
+          <li class="nav-item icon">
+            <a href="#"
+              ><img
+                src="images/image-avatar.png"
+                alt="avatar"
+                class="img-fluid w-50"
+            /></a>
+          </li>
+        </ul>
+        <hr />
+      </nav>
+      <main class="row mt-5">
+        <div class="col-6 pl-5">
+          <div class="sneaker">
+            <img
+              src="images/image-product-1.jpg"
+              alt="sneaker"
+              style="width: 70%"
+              class="rounded-3 mx-auto d-block"
+              id="product"
+            />
+          </div>
+          <div class="row mt-3 products" id="products">
+            <div class="col-3">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                onclick="openModal();currentSlide(1)"
+                alt="sneaker"
+                style="width: 65%; margin-left: 5rem;border:3px solid hsl(26, 100%, 55%)"
+                class="img-fluid rounded-3"
+              />
+            </div>
+            <div class="col-3">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                onclick="openModal();currentSlide(2)"
+                alt="sneaker"
+                style="width: 65%; margin-left: 30%"
+                class="img-fluid rounded-3"
+              />
+            </div>
+            <div class="col-3">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                onclick="openModal();currentSlide(3)"
+                alt="sneaker"
+                style="width: 65%; margin-left: -8%"
+                class="img-fluid rounded-3"
+              />
+            </div>
+            <div class="col-3">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                onclick="openModal();currentSlide(4)"
+                alt="sneaker"
+                style="width: 65%; margin-left: -40%"
+                class="img-fluid rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+
+        <div class="col-6 pt-5">
+          <h4 class="fs-6 fw-bold" style="color: orange">SNEAKER COMPANY</h4>
+          <h1 class="fs-1 fw-bold">Fall Limited Edition</h1>
+          <h1 class="fs-1 fw-bold" style="margin-top: -0.6rem">Sneakers</h1>
+          <p class="mt-4 fw-lighter" style="color: hsl(220, 14%, 75%)">
+            These low-profife sneakers are your perfect casual <br />wear
+            companion. Featuring a double rubber outer sole,<br />
+            they'll withstand everything the weather can offer.
+          </p>
+          <div class="amount">
+            <p class="fs-3 fw-bolder price">
+              $125.00 <span class="discount fs-6 fw-lighter">50%</span>
+            </p>
+            <del class="cancel">$250.00</del>
+          </div>
+          <div class="row mt-3">
+            <div class="col-sm-5 buttons d-flex w-25 justify-content-between">
+              <i class="bi bi-dash-lg" cursor="pointer" id='decreament' style="color: hsl(26, 100%, 55%)"></i>
+              <div class="quantity" value="0" id='quantity'>0</div>
+              <i class="bi bi-plus-lg" cursor="pointer" id='increament' style="color: hsl(26, 100%, 55%)"></i>
+            </div>
+            <div class="col-sm-7">
+              <button type="button" class="w-100 cart" id='cart'style="padding: 0.45rem">
+                <i class="bi bi-cart2"></i> &nbsp; Add to cart
+              </button>
+            </div>
+          </div>
+        </div>
+      </main>
+      <!-- The Modal/Lightbox -->
+      <div id="myModal" class="modal">
+        <span class="close cursor" onclick="closeModal()">&times;</span>
+        <div class="modal-content mx-auto d-block text-center">
+          <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="images/image-product-1.jpg" class="rounded-3" style="width: 30%;"/>
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="images/image-product-2.jpg" class="rounded-3" style="width: 30%;" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="images/image-product-3.jpg" class="rounded-3" style="width: 30%;" />
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="images/image-product-4.jpg" class="rounded-3" style="width: 30%;" />
+          </div>
+
+          <!-- Next/previous controls -->
+          <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <!-- Thumbnail image controls -->
+          <div class="row controls">
+            <div class="col-3">
+              <img
+                src="images/image-product-1-thumbnail.jpg"
+                onclick="currentSlide(1)"
+                style="width: 25%; margin-left: 27rem"
+                class="img-fluid rounded-3 demo"
+              />
+            </div>
+
+            <div class="col-3">
+              <img
+                src="images/image-product-2-thumbnail.jpg"
+                onclick="currentSlide(2)"
+                style="width: 25%; margin-left: 13rem"
+                class="img-fluid rounded-3 demo"
+              />
+            </div>
+
+            <div class="col-3">
+              <img
+                src="images/image-product-3-thumbnail.jpg"
+                onclick="currentSlide(3)"
+                style="width: 25%; margin-left:-14rem"
+                class="img-fluid rounded-3 demo"
+              />
+            </div>
+
+            <div class="col-3">
+              <img
+                src="images/image-product-4-thumbnail.jpg"
+                onclick="currentSlide(4)"
+                style="width: 25%; margin-left: -41rem"
+                class="img-fluid rounded-3 demo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- card for full-cart -->
+      <div class="card w-50 open-cart display" style="height:200px;" id="open-cart">
+        <div class="card-header">
+          Cart
+        </div>
+        <div class="card-body ">
+          <div class="empty text-center" id="empty">
+            <p class="mt-4">Your cart is empty</p>
+          </div>
+          <div class="full row" id="full">
+            <div class="col-sm-3">
+              <img src="images/image-product-1.jpg" width="100%" style="border: 1px solid #fff;border-radius:5px;">
+            </div>
+            <div class="col-sm-9 text-small">
+              <p>Fall Limited Edition Sneakers.</p>
+              <p id="cart-price">$125.00 &times; <span class="number"></span> <span class="answer"></span></p>
+            </div>
+            <button type="button" class=" check-out mt-2 mx-auto d-block">checkout</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card for empty-cart -->
+      <!-- <div class="card w-50 empty-cart" id="empty-cart">
+        <div class="card-header">
+          Cart
+        </div>
+        <div class="card-body">
+          <div class="empty text-center" id="empty">
+              <p>Your cart is empty</p>
+          </div>
+        </div>
+      </div> -->
+
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js"
+      integrity="sha384-Xe+8cL9oJa6tN/veChSP7q            +mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js"
+      integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy"
+      crossorigin="anonymous"
+    ></script>
+    <script src="ecommerce.js"></script>
+  </body>
+</html>

@@ -1,0 +1,221 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 90rem;
+  font-family: Kumbh Sans;
+}
+
+[class*="icon"] {
+  padding-left: 1.5rem;
+  display: inline-block !important;
+}
+
+.discount {
+  color: hsl(26, 100%, 55%);
+  margin-left: 1rem;
+  border: 1px solid hsl(25, 100%, 94%);
+  background-color: hsl(25, 100%, 94%);
+  border-radius: 5px;
+  padding: 0.2rem;
+}
+
+.cancel {
+  color: hsl(220, 14%, 75%);
+  font-weight: light;
+  margin-top: -6rem;
+}
+
+.buttons {
+  border: 1px solid hsl(223, 64%, 98%);
+  background-color: hsl(223, 64%, 98%);
+  padding: 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart {
+  background-color: hsl(26, 100%, 55%);
+  border: 1px solid hsl(26, 100%, 55%);
+  border-radius: 5px;
+  color: #fff;
+}
+
+.show {
+  visibility: visible;
+}
+/* The Modal (background) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 0%, 75%);
+  /* opacity: 75%; */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: hsl(0, 0%, 0%, 0%);
+  margin: auto;
+  padding: 0;
+  width: 90%;
+  max-width: 1200px;
+  height: 100%;
+  /* max-height: 1200px; */
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  position: absolute;
+  top: 2rem;
+  right: 30rem;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: hsl(26, 100%, 55%);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Hide the slides by default */
+.mySlides {
+  display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  /* padding: 5rem; */
+  margin-top: -6rem;
+  color: #000;
+  font-weight: bold;
+  font-size: 20px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 25rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.prev {
+  left: 25rem;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  background-color: #fff;
+  padding: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
+}
+
+.controls :focus {
+  border: 3px solid hsl(26, 100%, 55%);
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  color: hsl(26, 100%, 55%);
+}
+
+/* Caption text */
+.caption-container {
+  text-align: center;
+  /* background-color: hsl(0, 0%, 0%, 75%); */
+  padding: 2px 16px;
+  /* color: white; */
+}
+
+.demo:active,
+.demo:hover {
+  opacity: 0.6;
+}
+
+.update{
+  position: relative;
+  color: #000;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.Amount{
+  position: absolute;
+  border:1px solid hsl(26, 100%, 55%);
+  /* width: 1rem;
+  height: 1rem; */
+  border-radius: 50%;
+  padding: 0.1rem 0.4rem;
+  top: 3px;
+  right: cal(7.3rem);
+  background-color: hsl(26, 100%, 55%);
+  color: #fff;
+  font-size: 8px;
+  visibility: hidden;
+}
+
+.check-out{
+  background-color: hsl(26, 100%, 55%);
+  border: none;
+  padding: 8px 30px;
+  border-radius: 4px;
+  color: #fff;
+  width: 200px;
+}
+
+.open-cart{
+  position: absolute;
+  top:65px;
+  right:120px !important;
+  width: 250px !important;
+}
+.display{
+  display : none;
+}
+
+#cart-price{
+  margin-top: -15px;
+}
+
+.text-small{
+  font-size: 11px;
+  /* border: 1px solid red; */
+}
+
+/* .empty-cart{
+  position: absolute;
+  visibility: hidden;
+  top:65px;
+  right:120px !important;
+  width: 250px !important;
+} */
+
+.full{
+  visibility: hidden;
+}
